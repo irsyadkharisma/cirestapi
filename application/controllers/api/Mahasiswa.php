@@ -10,12 +10,13 @@ require APPPATH . 'libraries/REST_Controller.php';
 require APPPATH . 'libraries/Format.php';
 
 
-class Mahasiswa extends REST_Controller {
+class Mahasiswa extends CI_Controller {
 
-    // use REST_Controller { REST_Controller::__construct as private __resTraitConstruct; }
+    use REST_Controller { REST_Controller::__construct as private __resTraitConstruct; }
 
     public function __construct(){
         parent::__construct();
+        $this->__resTraitConstruct();
         $this->load->model('Mahasiswa_model');
     }
 
